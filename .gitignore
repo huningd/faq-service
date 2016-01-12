@@ -12,4 +12,13 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-# Created by .ignore support plugin (hsz.mobi)
+#JavaScript deps
+bower_components
+node_modules
+typings
+
+# Ignore generated
+*.js.map
+Application.js
+AlertController.js
+_SpecRunner.html

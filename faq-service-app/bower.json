@@ -1,0 +1,14 @@
+{
+  "name": "faq-service-app",
+  "version": "0.0.1",
+  "description": "",
+  "dependencies": {
+    "angular": "1.4.8",
+    "angular-resource": "1.4.8",
+    "angular-mocks": "1.4.8",
+    "bootstrap": "3.3.6",
+    "alertify.js": "alertifyjs#~1.0.8",
+    "system.js": "~0.19.15"
+  },
+  "devDependencies": {}
+}

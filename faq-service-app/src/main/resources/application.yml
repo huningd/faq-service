@@ -1,0 +1,14 @@
+debug: true
+
+server:
+ port: 8080
+
+zuul:
+  routes:
+    faq:
+      path: /faq/**
+      url: http://localhost:8081/faq
+
+logging:
+  level:
+    org.springframework.security: DEBUG
