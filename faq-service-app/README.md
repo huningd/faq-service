@@ -29,3 +29,4 @@ tsd query alertify
 
 ## Informations
 http://tinyurl.com/AngularTodayTomorrow
+https://angularu.com/VideoSession/2015sf/dan-and-john-bringing-their-view-on-the-latest-in-angular
