@@ -19,6 +19,12 @@ typings
 
 #IDE
 *.iml
+/devenv/nodejs_proxy/.bowerrc
+/devenv/nodejs_proxy/.npmrc
+/devenv/nodejs_proxy/.tsdrc
+/faq-service-app/js_build.sh
+/faq-service-app/bower.sh
+/faq-service-app/grunt.sh
 .idea
 
 # Logs

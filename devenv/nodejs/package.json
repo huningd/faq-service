@@ -1,0 +1,13 @@
+{
+  "name": "devenv",
+  "title": "devenv",
+  "version": "0.0.1",
+  "author": {
+    "name": "Dennis Huning",
+    "url": "http://www.muenchen.de"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+  }
+}
