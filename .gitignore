@@ -17,6 +17,13 @@ bower_components
 node_modules
 typings
 
+#IDE
+*.iml
+.idea
+
+# Logs
+tsd-debug.log
+
 # Ignore generated
 *.js.map
 Application.js
