@@ -26,26 +26,7 @@ class FaqServiceApplicationTests {
 
     @Test
     void contextLoads() {
-        FaqEntity entity = factory.manufacturePojo(FaqEntity);
-        entity.setOid(null);
-        entity.answers.clear();
-
-        QuestionEntity question = factory.manufacturePojo(QuestionEntity);
-        question.oid = null;
-
-        AnswerEntity answer = factory.manufacturePojo(AnswerEntity);
-        answer.oid = null;
-        answer.ratings.clear();
-
-        RatingEntity rating = new RatingEntity();
-        rating.rating = 5;
-        rating.user = "test";
-
-        answer.ratings.add(rating);
-
-        entity.answers.add(answer);
-        entity.question = question;
-
+        FaqEntity entity = FaqDataLoader.createRandomEntity();
         entity = repository.save(entity);
         assertNotNull(entity.getOid());
     }
