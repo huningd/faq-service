@@ -10,8 +10,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 /**
  * Created by huningd on 14.01.16.
  */
-@Configuration
-@EnableWebMvc
+//@Configuration
+//@EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter{
 
     // CORS to allow isPreFlightRequest

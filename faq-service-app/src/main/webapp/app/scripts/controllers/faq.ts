@@ -11,19 +11,9 @@ module yoAngularTestApp {
   export class FaqCtrl {
 
     constructor (private $scope: IFaqScope, private $resource: ng.resource.IResourceService, private $http: ng.IHttpService) {
-      $http.defaults.headers.common['Authorization'] = 'Basic dXNlcjpwYXNzd29yZA==';
-      // btoa("user" + ':' + "password");
+      $http.defaults.headers.common.Authorization = 'Basic ' + btoa("user" + ':' + "password");
       
-      var faq:ng.resource.IResourceClass<ng.resource.IResource<any>> = $resource('http://localhost:8081/faq', {}, 
-      {
-        get: { method : 'GET' },
-        options: { method : 'OPTIONS' },
-        headers: {
-          'Authorization': 'Basic dXNlcjpwYXNzd29yZA=='
-        }
-        
-      }
-      );
+      var faq:ng.resource.IResourceClass<ng.resource.IResource<any>> = $resource('http://localhost:8081/faq/');
       faq.get((data:any) => {
         var questions = data;
         console.log(questions); 
