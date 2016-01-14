@@ -4,7 +4,7 @@
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
 interfaceSystem {
-    import(name: string): any;
+  import(name: string): any;
   defined: any;
   amdDefine: () => void;
   amdRequire: () => void;
