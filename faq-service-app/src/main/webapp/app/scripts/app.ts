@@ -13,10 +13,14 @@ angular.module('yoAngularTestApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/faq', {
+        templateUrl: 'views/faq.html',
+        controller: 'FaqCtrl'
+      })
+      .when('/info', {
+        templateUrl: 'views/info.html',
+        controller: 'InfoCtrl',
+        controllerAs: 'info'
       })
       .otherwise({
         redirectTo: '/'

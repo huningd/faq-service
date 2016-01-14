@@ -227,7 +227,7 @@ module.exports = function (grunt) {
       },
       test: {
         src: ['test/spec/{,*/}*.ts', 'test/e2e/{,*/}*.ts'],
-          dest: 'test/spec',
+          dest: '.tmp/spec',
           options: {
           module: 'amd', //or commonjs
             target: 'es5', //or es3
@@ -237,7 +237,6 @@ module.exports = function (grunt) {
       }
     },
     
-    /* For some Reason tsd isn't working behind a proxy. I will open a request for this issue soon. https://github.com/DefinitelyTyped/tsd/issues
     tsd: {
       refresh: {
         options: {
@@ -246,8 +245,7 @@ module.exports = function (grunt) {
           config: 'tsd.json'
         }
       }
-    },*/
-    
+    },
 
     // Renames files for browser caching purposes
     filerev: {
@@ -465,7 +463,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'wiredep',
-      //'tsd:refresh',
+      'tsd:refresh',
       'concurrent:server',
       'postcss:server',
       'connect:livereload',
@@ -481,7 +479,7 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'clean:server',
     'wiredep',
-    //'tsd:refresh',
+    'tsd:refresh',
     'concurrent:test',
     'postcss',
     'connect:test',
@@ -491,7 +489,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
-    //'tsd:refresh',
+    'tsd:refresh',
     'useminPrepare',
     'concurrent:dist',
     'postcss',

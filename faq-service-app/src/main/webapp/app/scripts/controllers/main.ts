@@ -10,6 +10,7 @@ module yoAngularTestApp {
   export class MainCtrl {
 
     constructor (private $scope: IMainScope) {
+      
       $scope.awesomeThings = [
         'HTML5 Boilerplate',
         'AngularJS',
