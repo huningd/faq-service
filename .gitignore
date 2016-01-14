@@ -15,7 +15,7 @@ hs_err_pid*
 #JavaScript deps
 bower_components
 node_modules
-typings
+
 
 #IDE
 *.iml
@@ -35,3 +35,4 @@ tsd-debug.log
 Application.js
 AlertController.js
 _SpecRunner.html
+.grunt
