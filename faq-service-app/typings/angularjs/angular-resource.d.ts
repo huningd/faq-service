@@ -9,67 +9,69 @@
 ///////////////////////////////////////////////////////////////////////////////
 // ngResource module (angular-resource.js)
 ///////////////////////////////////////////////////////////////////////////////
-declaremoduleangular.resource {
+declare module angular.resource {
+
     /**
-    * Currently supported options for the $resource factory options argument.
-    */
-    interfaceIResourceOptions {
+     * Currently supported options for the $resource factory options argument.
+     */
+    interface IResourceOptions {
         /**
-        * If true then the trailing slashes from any calculated URL will be stripped (defaults to true)
-        */
+         * If true then the trailing slashes from any calculated URL will be stripped (defaults to true)
+         */
         stripTrailingSlashes?: boolean;
-}
+    }
 
-///////////////////////////////////////////////////////////////////////////
-// ResourceService
-// see http://docs.angularjs.org/api/ngResource.$resource
-// Most part of the following definitions were achieved by analyzing the
-// actual implementation, since the documentation doesn't seem to cover
-// that deeply.
-///////////////////////////////////////////////////////////////////////////
-interface IResourceService {
-(url: string, paramDefaults?: any,
-/** example:  {update: { method: 'PUT' }, delete: deleteDescriptor }
-where deleteDescriptor : IActionDescriptor */
-actions?: any, options?: IResourceOptions): IResourceClass < IResource<any>>;
-<T, U>(url: string, paramDefaults?: any,
-/** example:  {update: { method: 'PUT' }, delete: deleteDescriptor }
-where deleteDescriptor : IActionDescriptor */
-actions?: any, options?: IResourceOptions): U;
-<T>(url: string, paramDefaults?: any,
-/** example:  {update: { method: 'PUT' }, delete: deleteDescriptor }
-where deleteDescriptor : IActionDescriptor */
-actions?: any, options?: IResourceOptions): IResourceClass < T>;
-}
 
-// Just a reference to facilitate describing new actions
-interface IActionDescriptor {
-url?: string;
-method: string;
-isArray?: boolean;
-params?: any;
-headers?: any;
-}
+    ///////////////////////////////////////////////////////////////////////////
+    // ResourceService
+    // see http://docs.angularjs.org/api/ngResource.$resource
+    // Most part of the following definitions were achieved by analyzing the
+    // actual implementation, since the documentation doesn't seem to cover
+    // that deeply.
+    ///////////////////////////////////////////////////////////////////////////
+    interface IResourceService {
+        (url: string, paramDefaults?: any,
+            /** example:  {update: { method: 'PUT' }, delete: deleteDescriptor }
+             where deleteDescriptor : IActionDescriptor */
+            actions?: any, options?: IResourceOptions): IResourceClass<IResource<any>>;
+        <T, U>(url: string, paramDefaults?: any,
+            /** example:  {update: { method: 'PUT' }, delete: deleteDescriptor }
+             where deleteDescriptor : IActionDescriptor */
+            actions?: any, options?: IResourceOptions): U;
+        <T>(url: string, paramDefaults?: any,
+            /** example:  {update: { method: 'PUT' }, delete: deleteDescriptor }
+             where deleteDescriptor : IActionDescriptor */
+            actions?: any, options?: IResourceOptions): IResourceClass<T>;
+    }
 
-// Baseclass for everyresource with default actions.
-// If you define your new actions for the resource, you will need
-// to extend this interface and typecast the ResourceClass to it.
-//
-// In case of passing the first argument as anything but a function,
-// it's gonna be considered data if the action method is POST, PUT or
-// PATCH (in other words, methods with body). Otherwise, it's going
-// to be considered as parameters to the request.
-// https://github.com/angular/angular.js/blob/v1.2.0/src/ngResource/resource.js#L461-L465
-//
-// Only those methods with an HTTP body do have 'data' as first parameter:
-// https://github.com/angular/angular.js/blob/v1.2.0/src/ngResource/resource.js#L463
-// More specifically, those methods are POST, PUT and PATCH:
-// https://github.com/angular/angular.js/blob/v1.2.0/src/ngResource/resource.js#L432
-//
-// Also, static calls always return the IResource (or IResourceArray) retrieved
-// https://github.com/angular/angular.js/blob/v1.2.0/src/ngResource/resource.js#L538-L549
-interface IResourceClass < T> {
-new(dataOrParams? : any) : T;
+    // Just a reference to facilitate describing new actions
+    interface IActionDescriptor {
+        url?: string;
+        method: string;
+        isArray?: boolean;
+        params?: any;
+        headers?: any;
+    }
+
+    // Baseclass for everyresource with default actions.
+    // If you define your new actions for the resource, you will need
+    // to extend this interface and typecast the ResourceClass to it.
+    //
+    // In case of passing the first argument as anything but a function,
+    // it's gonna be considered data if the action method is POST, PUT or
+    // PATCH (in other words, methods with body). Otherwise, it's going
+    // to be considered as parameters to the request.
+    // https://github.com/angular/angular.js/blob/v1.2.0/src/ngResource/resource.js#L461-L465
+    //
+    // Only those methods with an HTTP body do have 'data' as first parameter:
+    // https://github.com/angular/angular.js/blob/v1.2.0/src/ngResource/resource.js#L463
+    // More specifically, those methods are POST, PUT and PATCH:
+    // https://github.com/angular/angular.js/blob/v1.2.0/src/ngResource/resource.js#L432
+    //
+    // Also, static calls always return the IResource (or IResourceArray) retrieved
+    // https://github.com/angular/angular.js/blob/v1.2.0/src/ngResource/resource.js#L538-L549
+    interface IResourceClass<T> {
+        new(dataOrParams? : any) : T;
         get(): T;
         get(params: Object): T;
         get(success: Function, error?: Function): T;

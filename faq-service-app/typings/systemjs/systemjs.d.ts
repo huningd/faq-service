@@ -3,7 +3,7 @@
 // Definitions by: Ludovic HENIN <https://github.com/ludohenin/>, Nathan Walker <https://github.com/NathanWalker/>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
-interfaceSystem {
+interface System {
   import(name: string): any;
   defined: any;
   amdDefine: () => void;

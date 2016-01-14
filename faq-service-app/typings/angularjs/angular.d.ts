@@ -6,27 +6,28 @@
 
 /// <reference path="../jquery/jquery.d.ts" />
 
-declarevarangular: angular.IAngularStatic;
+declare var angular: angular.IAngularStatic;
 
 // Support for painless dependency injection
 interface Function {
-$inject?: string[];
+    $inject?: string[];
 }
 
 // Collapse angular into ng
 import ng = angular;
 // Support AMD require
 declare module 'angular' {
-export = angular;
+    export = angular;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 // ng module (angular.js)
 ///////////////////////////////////////////////////////////////////////////////
 declare module angular {
-// not directly implemented, but ensures that constructed class implements $get
-interface IServiceProviderClass {
-new (...args: any[]): IServiceProvider;
+
+    // not directly implemented, but ensures that constructed class implements $get
+    interface IServiceProviderClass {
+        new (...args: any[]): IServiceProvider;
     }
 
     interface IServiceProviderFactory {
@@ -783,19 +784,19 @@ new (...args: any[]): IServiceProvider;
          */
         (name: string): IFilterFunc;
     }
-
+    
     interface IFilterFunc {
         <T>(array: T[], expression: string | IFilterPatternObject | IFilterPredicateFunc<T>, comparator?: IFilterComparatorFunc<T>|boolean): T[];
     }
-
+    
     interface IFilterPatternObject {
         [name: string]: string;
     }
-
+    
     interface IFilterPredicateFunc<T> {
         (value: T, index: number, array: T[]): T[];
     }
-
+    
     interface IFilterComparatorFunc<T> {
         (actual: T, expected: T): boolean;
     }

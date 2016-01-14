@@ -3,19 +3,19 @@
 // Definitions by: John Jeffery <http://github.com/jjeffery>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
-declarevaralertify: alertify.IAlertifyStatic;
+declare var alertify: alertify.IAlertifyStatic;
 
 declare module alertify {
-interface IAlertifyStatic {
-/**
-* Create an alert dialog box
-* @param message   The message passed from the callee
-* @param fn        Callback function
-* @param cssClass  Class(es) to append to dialog box
-* @return alertify (ie this)
-* @since 0.0.1
-*/
-alert(message: string, fn?: Function, cssClass?: string): IAlertifyStatic;
+    interface IAlertifyStatic {
+        /**
+         * Create an alert dialog box
+         * @param message   The message passed from the callee
+         * @param fn        Callback function
+         * @param cssClass  Class(es) to append to dialog box
+         * @return alertify (ie this)
+         * @since 0.0.1
+         */
+        alert(message: string, fn?: Function, cssClass?: string): IAlertifyStatic;
         
         /**
          * Create a confirm dialog box
