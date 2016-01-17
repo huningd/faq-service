@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="yoAngularTestApp">
+  <body ng-app="faq.webapp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -79,11 +79,15 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/info.js"></script>
-        <script src="scripts/controllers/faq.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/info.js"></script>
+    <script src="scripts/controllers/FaqController.js"></script>
+    <script src="scripts/controllers/FaqDetailController.js"></script>
+    <script src="scripts/services/FaqService.js"></script>
+    <script src="scripts/model/Faq.js"></script>
+    <script src="scripts/ApiResourceFactory.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

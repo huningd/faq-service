@@ -1,7 +1,7 @@
-/// <reference path="../../typings/angularjs/angular.d.ts" />
-/// <reference path="../../typings/angularjs/angular-route.d.ts" />
+/// <reference path="../../../../typings/angularjs/angular.d.ts" />
+/// <reference path="../../../../typings/angularjs/angular-route.d.ts" />
 'use strict';
-angular.module('yoAngularTestApp', [
+angular.module('faq.webapp', [
     'ngResource',
     'ngRoute'
 ])
@@ -10,11 +10,6 @@ angular.module('yoAngularTestApp', [
         .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
-    })
-        .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
     })
         .otherwise({
         redirectTo: '/'

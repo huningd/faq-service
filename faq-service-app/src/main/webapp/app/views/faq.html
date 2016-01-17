@@ -1,5 +1,32 @@
-<div class="jumbotron">
-  <h1>Faq</h1>
-</div>
-
+<div class="container" ng-controller="faq.webapp.faqCtrl">
+    <div class="jumbotron">
+    <h1>Faq</h1>
+    </div>
+    <form class="form-inline" ng-submit="refreshFaqs()">
+        <div class="form-group">
+            <input style="width:150px" type="text" class="form-control"
+                   ng-model="search"
+                   placeholder="Search">
+            <button style="width:100px" id="connectButton" type="submit"
+                    class="btn btn-success">Refresh
+            </button>
+        </div>
+    </form>
+    <table class="table table-striped table-condensed">
+        <thead>
+        <tr>
+            <th>topic</th>
+            <th>question</th>
+            <th>answers</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="faq in faqs | filter:search">
+            <td style="text-align: left; width:20%"><a href="#/faq/{{faq.oid}}"
+                 class="fa fa-edit">{{faq.topic}}</a></td>
+            <td style="text-align: left; width:40%">{{faq.question.text}}</td>
+            <td style="text-align: left; width:40%">{{faq.answers.length}}</td>
+        </tr>
+        </tbody>
+    </table>
 </div>

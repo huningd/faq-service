@@ -1,5 +1,5 @@
 /// <reference path="../app.d.ts" />
-declare module yoAngularTestApp {
+declare module faq.webapptest {
     interface IMainScope extends ng.IScope {
         awesomeThings: any[];
     }

@@ -7,7 +7,7 @@
 describe('Controller: MainCtrl', () => {
 
   // load the controller's module
-  beforeEach(module('yoAngularTestApp'));
+  beforeEach(module('faq.webapp'));
 
   var MainCtrl: yoAngularTestApp.MainCtrl,
     scope: yoAngularTestApp.IMainScope;

@@ -2,7 +2,7 @@
 
 'use strict';
 
-module yoAngularTestApp {
+module faq.webapp {
   export interface IMainScope extends ng.IScope {
     awesomeThings: any[];
   }
@@ -20,5 +20,5 @@ module yoAngularTestApp {
   }
 }
 
-angular.module('yoAngularTestApp')
-  .controller('MainCtrl', yoAngularTestApp.MainCtrl);
+angular.module('faq.webapp')
+  .controller('MainCtrl', faq.webapp.MainCtrl);
