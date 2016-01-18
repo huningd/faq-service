@@ -28,6 +28,9 @@
     },
     "jasmine/jasmine.d.ts": {
       "commit": "f23cd55e319a0f67362ca0dbc4cf3e2ec1339f4e"
+    },
+    "alertify/alertify.d.ts": {
+      "commit": "70bf7e2bfeb0d5b1b651ef3219bcc65c8eec117e"
     }
   }
 }

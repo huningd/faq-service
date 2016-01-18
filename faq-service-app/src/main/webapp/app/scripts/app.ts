@@ -8,6 +8,7 @@ module faq.webapp{
    export var app = angular.module('faq.webapp', [
         'ngResource',
         'ngRoute',
+        'ngAlertify',
         'faq.webapp.controllers',
         'faq.webapp.factories',
         'faq.webapp.services'
